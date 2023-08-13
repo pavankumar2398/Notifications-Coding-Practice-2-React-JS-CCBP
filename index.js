@@ -1,39 +1,40 @@
 const Notification = (props) => {
   //  Write your code here.
-  const { name, url, className } = props;
+  const { className, iconUrl, message } = props;
+  const containerClassName = `notification-container ${className}`;
 
   return (
-    <div className={`notification ${className}`}>
-      <img className="icon" src={url} />
-      <p className="para">{name}</p>
+    <div className={containerClassName}>
+      <img className="icon" src={iconUrl} />
+      <p className="message">{message}</p>
     </div>
   );
 };
 
 const element = (
   //  Write your code here.
-  <div className="bg-container">
-    <h1 className="heading">Notifications</h1>
-    <div className="notification-list">
+  <div className="notifications-app-container">
+    <h1 className="title">Notifications</h1>
+    <div className="notifications-list-container">
       <Notification
-        url="https://assets.ccbp.in/frontend/react-js/primary-icon-img.png"
-        name="Information Message"
-        className="information"
+        className="primary-bg-color"
+        iconUrl="https://assets.ccbp.in/frontend/react-js/primary-icon-img.png"
+        message="Information Message"
       />
       <Notification
-        url="https://assets.ccbp.in/frontend/react-js/success-icon-img.png"
-        name="Success Message"
-        className="success"
+        className="success-bg-color"
+        iconUrl="https://assets.ccbp.in/frontend/react-js/success-icon-img.png"
+        message="Success Message"
       />
       <Notification
-        url="https://assets.ccbp.in/frontend/react-js/warning-icon-img.png"
-        name="Warning Message"
-        className="warning"
+        className="warning-bg-color"
+        iconUrl="https://assets.ccbp.in/frontend/react-js/warning-icon-img.png"
+        message="Warning Message"
       />
       <Notification
-        url="https://assets.ccbp.in/frontend/react-js/danger-icon-img.png"
-        name="Error Message"
-        className="error"
+        className="danger-bg-color"
+        iconUrl="https://assets.ccbp.in/frontend/react-js/danger-icon-img.png"
+        message="Error Message"
       />
     </div>
   </div>
